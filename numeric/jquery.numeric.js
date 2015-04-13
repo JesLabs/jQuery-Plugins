@@ -87,7 +87,7 @@ $.fn.numeric.keypress = function(e)
 	{
 	  var value = $(this).val();
 		/* '-' only allowed at start and if negative numbers allowed */
-		if($.inArray('-', value.split('')) !== 0 && negative && key == 45 && (value.length === 0 || parseInt($.fn.getSelectionStart(this), 10) === 0)) { return true; }
+		if (key == 45 && negative && ($.inArray('-', value.split('')) !== 0 || value.length === 0 || parseInt($.fn.getSelectionStart(this), 10) === 0)) { return true; }
 		/* only one decimal separator allowed */
 		if(decimal && key == decimal.charCodeAt(0) && $.inArray(decimal, value.split('')) != -1)
 		{
